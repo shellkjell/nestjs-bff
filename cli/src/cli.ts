@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import * as yargs from 'yargs';
 import { AppConfig } from '../../backend/src/config/app.config';
 import { getLogger } from '@nestjs-bff/backend/lib/shared/logging/logging.shared.module';
@@ -7,7 +5,8 @@ import { getLogger } from '@nestjs-bff/backend/lib/shared/logging/logging.shared
 // global setup
 AppConfig.appName = 'nestjs-bff-cli';
 
-global.nestjs_bff = { config: AppConfig };
+// global.nestjs_bff = { config: AppConfig };
+(global as any).nestjs_bff = { config: AppConfig };
 const bffLogger = getLogger();
 
 // prettier-ignore

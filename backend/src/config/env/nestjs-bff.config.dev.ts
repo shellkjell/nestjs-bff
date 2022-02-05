@@ -5,9 +5,9 @@ export const NestjsConfigEnv: INestjsBffConfigEnv = {
   nodeEnv: 'dev',
   db: {
     mongo: {
-      mongoConnectionUri: 'mongodb://localhost',
+      mongoConnectionUri: 'mongodb://root:example@mongodb:27017',
       options: {
-        dbName: 'my-nestjs-bff-app',
+        dbName: 'nest-data',
       },
     },
   },
@@ -30,7 +30,7 @@ export const NestjsConfigEnv: INestjsBffConfigEnv = {
     },
   },
   jwt: {
-    jwtPrivateKey: extractKey(`${process.cwd()}/src/config/keys/jwt.private-key.dev.pem`),
-    jwtPublicKey: extractKey(`${process.cwd()}/src/config/keys/jwt.public-key.dev.pem`),
+    jwtPrivateKey: extractKey(`${process.cwd()}/backend/src/config/keys/jwt.private-key.dev.pem`),
+    jwtPublicKey: extractKey(`${process.cwd()}/backend/src/config/keys/jwt.public-key.dev.pem`),
   },
 };
