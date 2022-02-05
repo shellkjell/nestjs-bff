@@ -37,26 +37,26 @@ The primary set of services that are currently exposed via the CLI are for datab
 
 ```bash
 # install dependencies for all sub projects (api, cli, webfrontend)
-$ yarn run install-all
+$ yarn bootstrap
 
 ```
 
-1.  Make a symlink to the CLI from the CLI root directory
+1.  Make a symlink to the CLI from the monorepo root directory
 
 ```bash
 # Windows
-$ mklink cli.ts src\cli.ts
+$ mklink cli.ts cli\src\cli.ts
 
 # Linux
-$ <TODO>
+$ ln -s cli/src/cli.ts cli.ts
 
 ```
 
 3.  Install ts-node globally
 
 ```bash
-# Windows
-$ yarn install -g ts-node
+# Windows, Linux
+$ yarn global add ts-node
 
 ```
 
